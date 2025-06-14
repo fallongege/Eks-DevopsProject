@@ -1,6 +1,6 @@
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "19.15.1"
+  version = "~> 20.31"
 
   cluster_name                   = local.name
   cluster_endpoint_public_access = true
@@ -17,8 +17,8 @@ module "eks" {
     }
   }
 
-  vpc_id                   = module.vpc.vpc_id
-  subnet_ids               = module.vpc.private_subnets
+  vpc_id                   = aws_vpc.main.id
+  subnet_ids               = aws_subnet.public.*.id
 
   eks_managed_node_groups = {
     panda-node = {
@@ -29,11 +29,11 @@ module "eks" {
       instance_types = ["t2.medium"]
       capacity_type  = "SPOT"
 
-      tags = {
+      tags = merge({
         ExtraTag = "Panda_Node"
-      }
+      }, local.general_tags)
     }
   }
 
-  tags = local.tags
+  tags = local.name != "" ? merge(local.general_tags, { Name = local.name }) : local.general_tags
 }
