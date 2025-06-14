@@ -10,10 +10,10 @@ variable "ami" {
   type        = string
 }
 
-variable "key_name" {
-  description = "Key Pair"
-  type        = string
-}
+# variable "key_name" {
+#   description = "Key Pair"
+#   type        = string
+# }
 
 variable "volume_size" {
   description = "Volume size"
