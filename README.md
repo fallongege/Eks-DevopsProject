@@ -351,9 +351,9 @@ For further details, refer to the word document containing a complete write-up o
 ---
 
 # ArgoCD
-!
+![alt text](src/ArgoCD.png)
 
 # Grafana
-
+![alt text](src/Grafana.png)
 
 
