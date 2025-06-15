@@ -351,9 +351,9 @@ For further details, refer to the word document containing a complete write-up o
 ---
 
 # ArgoCD
-![ArgoCD](https://github.com/user-attachments/assets/69da5bdf-8917-4e76-8084-df923927bd23)
+!
 
 # Grafana
-![Grafana](https://github.com/user-attachments/assets/2ad2cb13-e47c-40e8-9e54-eb4b93b15d58)
+
 
 
